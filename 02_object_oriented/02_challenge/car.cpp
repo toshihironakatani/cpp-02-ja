@@ -7,6 +7,7 @@ Car::Car(std::string make, std::string model, int year, double price)
     if (price < 0) {
         std::cerr << "Negative Car Price!" << "\n";
     }
+    driver = nullptr;
 }
 
 void Car::setPrice(double price) {
@@ -25,4 +26,12 @@ void Car::displayInfo() const {
 
 void Car::printPriceChange(double from, double to) const {
     std::cout << "Changing price from " << from << " to " << to << "\n";
+}
+
+void Car::setDriver(Driver* driver) {
+    this->driver = driver;
+}
+
+Driver Car::getDriver() const {
+    return *driver;
 }

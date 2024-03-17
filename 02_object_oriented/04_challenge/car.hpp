@@ -1,11 +1,10 @@
 #pragma once
 #include <string>
-
-#include "logger.hpp"
+#include "tire.hpp"
 
 class Car {
 public:
-    Car(std::string make, std::string model, int year, double price);
+    Car(std::string make, std::string model, int year, double price, int tire_size, std::string tire_type);
 
     void setPrice(double price);
 
@@ -15,11 +14,15 @@ public:
     double getPrice() const;
 
     void displayInfo() const;
+    Tire getTire() const;
 
 private:
+    void printPriceChange(double from, double to) const;
 
     std::string make;
     std::string model;
     int year;
     double price;
+
+    Tire tire;
 };
