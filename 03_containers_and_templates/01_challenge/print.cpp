@@ -1,7 +1,5 @@
-// コードを入力してください
-#pragma once
+#include "print.hpp"
 #include <iostream>
-#include <vector>
 
 template <typename T>
 void print_elements(T& container) {
@@ -9,3 +7,5 @@ void print_elements(T& container) {
     std::cout << element << std::endl;
   }
 }
+
+template void print_elements<std::vector<int>>(std::vector<int>& container);
